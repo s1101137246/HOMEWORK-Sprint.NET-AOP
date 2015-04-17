@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net"
+         xmlns:aop="http://www.springframework.net/aop">
+
+  <object id="debogLogInterceptor" type="KuasCore.Interceptors.DebogLogInterceptor" />
+  <object id="updateEmployeeNameInterceptor" type="KuasCore.Interceptors.UpdateEmployeeNameInterceptor" />
+
+  <object id="servicePointcut" type="Spring.Aop.Support.SdkRegularExpressionMethodPointcut, Spring.Aop">
+    <property name="Pattern" value="KuasCore.Services.Impl.*Service" />
+  </object>
+
+  <object id="updateEmployeePointcut" type="Spring.Aop.Support.SdkRegularExpressionMethodPointcut, Spring.Aop">
+    <property name="Pattern" value="KuasCore.Services.Impl.EmployeeService.GetEmployeeById" />
+  </object>
+
+  <aop:config>
+    <aop:advisor pointcut-ref="updateEmployeePointcut" advice-ref="updateEmployeeNameInterceptor" />
+  </aop:config>
+
+</objects>

@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KuasWebApp", "KuasWebApp\KuasWebApp.csproj", "{9190DDA9-6168-4E6D-AAD6-15E7E38C3C08}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C4BBCE56-ECD7-494C-9731-5093F529DF69} = {C4BBCE56-ECD7-494C-9731-5093F529DF69}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KuasCore", "KuasCore\KuasCore.csproj", "{C4BBCE56-ECD7-494C-9731-5093F529DF69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KuasCoreTests", "KuasCoreTests\KuasCoreTests.csproj", "{D1E916CA-F60B-4A04-9F79-4E0A6392277A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C4BBCE56-ECD7-494C-9731-5093F529DF69} = {C4BBCE56-ECD7-494C-9731-5093F529DF69}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{166DBE89-8A4A-4489-87F9-212B0E2CEB99}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9190DDA9-6168-4E6D-AAD6-15E7E38C3C08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9190DDA9-6168-4E6D-AAD6-15E7E38C3C08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9190DDA9-6168-4E6D-AAD6-15E7E38C3C08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9190DDA9-6168-4E6D-AAD6-15E7E38C3C08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4BBCE56-ECD7-494C-9731-5093F529DF69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4BBCE56-ECD7-494C-9731-5093F529DF69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4BBCE56-ECD7-494C-9731-5093F529DF69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4BBCE56-ECD7-494C-9731-5093F529DF69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1E916CA-F60B-4A04-9F79-4E0A6392277A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1E916CA-F60B-4A04-9F79-4E0A6392277A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1E916CA-F60B-4A04-9F79-4E0A6392277A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1E916CA-F60B-4A04-9F79-4E0A6392277A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

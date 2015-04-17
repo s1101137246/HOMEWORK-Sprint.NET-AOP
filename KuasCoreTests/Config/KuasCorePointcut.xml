@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net"
+         xmlns:aop="http://www.springframework.net/aop">
+
+  <!-- AOP 記錄 Log 的 Advice. -->
+  <object id="debogLogInterceptor" type="KuasCore.Interceptors.DebogLogInterceptor" />
+
+  <!-- 用單一物件實體指定, 指定 AOP 要掛在哪一個物件上 -->
+  <!-- InterceptorNames = AOP Advice, Target = Reference. Service Object. -->
+
+  <!--<object id="employeeServiceProxy" type="Spring.Aop.Framework.ProxyFactoryObject, Spring.Aop" >
+    <property name="InterceptorNames" value="debogLogInterceptor" />
+    <property name="Target" ref="employeeService" />
+  </object>-->
+
+
+  <!-- 用物件名稱指定, 指定 AOP 要掛在哪一個物件上 -->
+  <!-- InterceptorNames = AOP Advice, ObjectNames = Object Names (可用 * 來搜尋多物件). -->
+
+  <!--<object id="serviceProxyCreator" type="Spring.Aop.Framework.AutoProxy.ObjectNameAutoProxyCreator, Spring.Aop">
+    <property name="InterceptorNames" value="debogLogInterceptor" />
+    <property name="ObjectNames">
+      <list>
+        <value>*Service</value>
+      </list>
+    </property>
+  </object>-->
+
+
+  <!-- 用正規表示是來查詢物件名稱, 指定 AOP 要掛在哪一個物件上 -->
+  <!-- InterceptorNames = AOP Advice, Pattern = 查詢物件名稱的正規表示式. -->
+  <!--<object id="ProxyCreator" type="Spring.Aop.Framework.AutoProxy.DefaultAdvisorAutoProxyCreator, Spring.Aop"/>
+
+  <object id="servicePointcutAdvisor" type="Spring.Aop.Support.RegularExpressionMethodPointcutAdvisor, Spring.Aop">
+    <property name="Advice" ref="debogLogInterceptor" />
+    <property name="Patterns" value="KuasCore.Services.*Service" />
+  </object>-->
+
+
+  <!-- 用正規表示是來查詢物件名稱, 指定 AOP 要掛在哪一個物件上 -->
+  <!-- InterceptorNames = AOP Advice, Pattern = 查詢物件名稱的正規表示式. -->
+
+  <object id="servicePointcut" type="Spring.Aop.Support.SdkRegularExpressionMethodPointcut, Spring.Aop">
+    <property name="Pattern" value="KuasCore.Services.*Service" />
+  </object>
+
+  <aop:config>
+    <aop:advisor pointcut-ref="servicePointcut" advice-ref="debogLogInterceptor" />
+  </aop:config>
+
+</objects>
